@@ -5,12 +5,13 @@ const getAuthHeaders = () => {
 };
 
 export const fetchWithAuth = async (url, options = {}) => {
+    const fullUrl = `${API_BASE_URL}${url}`;
     const headers = {
         ...getAuthHeaders(),
         ...options.headers,
     };
 
-    const response = await fetch(url, { ...options, headers });
+    const response = await fetch(fullUrl, { ...options, headers });
 
     if (response.status === 401) {
         localStorage.clear();
