@@ -1,3 +1,4 @@
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 const getAuthHeaders = () => {
     const token = localStorage.getItem("token");
     return token ? { "Authorization": `Bearer ${token}` } : {};
@@ -6,7 +7,7 @@ const getAuthHeaders = () => {
 export const fetchWithAuth = async (url, options = {}) => {
     const headers = {
         ...getAuthHeaders(),
-        ...options.headers, 
+        ...options.headers,
     };
 
     const response = await fetch(url, { ...options, headers });

@@ -33,6 +33,7 @@ import CotizacionEstimada from "./components/CotizacionEstimada";
 import Catalogo from "./components/Catalogo";
 
 function App() {
+    // eslint-disable-next-line no-unused-vars
     const [user, setUser] = useState(null);
 
     useEffect(() => {
