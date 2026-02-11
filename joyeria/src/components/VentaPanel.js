@@ -8,7 +8,7 @@ const VentaPanel = () => {
     const [pagoTipo, setPagoTipo] = useState("EFECTIVO");
     const [ruc, setRuc] = useState("");
     const [efectivoRecibido, setEfectivoRecibido] = useState(0);
-
+    const [exacto, setExacto] = useState(false);
     //ventasGuardadas
     const [, setVentasGuardadas] = useState(null);
     const [mensaje, setMensaje] = useState(null);
