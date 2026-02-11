@@ -9,8 +9,8 @@ const VentaPanel = () => {
     const [ruc, setRuc] = useState("");
     const [efectivoRecibido, setEfectivoRecibido] = useState(0);
 
-    // eslint-disable-next-line no-unused-varsconst [exacto, setExacto] = useState(false);
-    const [ventasGuardadas, setVentasGuardadas] = useState(null);
+    //ventasGuardadas
+    const [, setVentasGuardadas] = useState(null);
     const [mensaje, setMensaje] = useState(null);
 
     useEffect(() => {
