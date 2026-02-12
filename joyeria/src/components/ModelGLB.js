@@ -63,9 +63,9 @@ const ModelGLB = ({ url, name }) => {
         controls.enableZoom = true;
 
         // luces
-        const ambient = new THREE.AmbientLight(0xffffff, 1.2);
+        const ambient = new THREE.AmbientLight(0xffffff, 1.0);
         scene.add(ambient);
-        const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+        const dir = new THREE.DirectionalLight(0xffffff, 0.5);
                  dir.position.set(5, 6, 5);
                  scene.add(dir);
         //const hemi = new THREE.HemisphereLight(0xffffff, 0x888888, 0.5);
@@ -73,7 +73,7 @@ const ModelGLB = ({ url, name }) => {
         //               scene.add(hemi);-----new
         //---------------------------------------------------------
         // Luz direccional principal (frontal)
-        const mainLight = new THREE.DirectionalLight(0xffffff, 0.3);
+        const mainLight = new THREE.DirectionalLight(0xffffff, 0.1);
         mainLight.position.set(5, 8, 5);
         scene.add(mainLight);
 
