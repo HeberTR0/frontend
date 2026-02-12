@@ -8,7 +8,7 @@ const MODELOS = [
     { name: "Luxury Wristwatch", url: "/models/watch__luxury_wristwatch_3d_model.glb" },
     { name: "Ambassador Heritage 1863", url: "/models/ambassador_heritage_1863_watch_-_2048px2.glb" },
     { name: "Sortija Acabado Premium", url: "/models/jewelry_item.glb" },
-    { name: "Joya Stone", url: "/models/jewelry_stone.glb" },
+    { name: "Joya Cat", url: "/models/ring_cat.glb" },
     { name: "Brazalete Turquesa", url: "/models/turquoise_bracelet_3d_scan.glb" },
     { name: "Anillo de diamante", url: "/models/diamond_ring_jewelry.glb" },
     { name: "Anillo Flor", url: "/models/flower_ring.glb" },
