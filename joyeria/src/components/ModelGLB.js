@@ -57,12 +57,31 @@ const ModelGLB = ({ url, name }) => {
         controls.enableZoom = true;
 
         // luces
-        const ambient = new THREE.AmbientLight(0xffffff, 0.8);
+        const ambient = new THREE.AmbientLight(0xffffff, 1.5);
         scene.add(ambient);
-        const dir = new THREE.DirectionalLight(0xffffff, 0.9);
-        dir.position.set(5, 6, 5);
-        scene.add(dir);
+        const hemi = new THREE.HemisphereLight(0xffffff, 0x888888, 1.2);
+        hemi.position.set(0, 10, 0);
+        scene.add(hemi);
+        //const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+        //         dir.position.set(5, 6, 5);
+        //         scene.add(dir);-----old
+        //---------------------------------------------------------
+        // Luz direccional principal (frontal)
+        const mainLight = new THREE.DirectionalLight(0xffffff, 1.8);
+        mainLight.position.set(5, 8, 5);
+        scene.add(mainLight);
 
+// Luz de relleno (lateral izquierda)
+        const fillLight = new THREE.DirectionalLight(0xffffff, 1.0);
+        fillLight.position.set(-5, 3, 3);
+        scene.add(fillLight);
+
+// Luz trasera para eliminar sombras
+        const backLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        backLight.position.set(0, 3, -5);
+        scene.add(backLight);
+
+        //----------------------------------------------------------
         // Cargar GLB
         const loader = new GLTFLoader();
         let model;
