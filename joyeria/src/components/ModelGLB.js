@@ -49,6 +49,12 @@ const ModelGLB = ({ url, name }) => {
         // renderer
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(width, height);
+        //----new---
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        //----new---
         mountRef.current.appendChild(renderer.domElement);
 
         // controles
@@ -89,7 +95,19 @@ const ModelGLB = ({ url, name }) => {
             url,
             (gltf) => {
                 model = gltf.scene;
-
+                //-----new---
+                model.traverse((child) => {
+                    if (child.isMesh) {
+                        if (child.material) {
+                            child.material.needsUpdate = true;
+                            // Aumentar brillo si es muy oscuro
+                            if (child.material.color) {
+                                child.material.color.multiplyScalar(1.3);
+                            }
+                        }
+                    }
+                });
+                //-----new---
                 // Escalar para que el bounding box tenga un tamaño razonable
                 const bbox = new THREE.Box3().setFromObject(model);
                 const size = new THREE.Vector3();
