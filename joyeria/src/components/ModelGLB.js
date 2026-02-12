@@ -51,7 +51,7 @@ const ModelGLB = ({ url, name }) => {
         renderer.setSize(width, height);
         //----new---
         renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.2;
         //----new---
