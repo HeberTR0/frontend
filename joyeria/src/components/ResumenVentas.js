@@ -63,7 +63,7 @@ const ResumenVentas = () => {
                         Total de Ventas
                     </div>
                     <div style={{ fontSize: "24px", fontWeight: "700", color: "#1976d2" }}>
-                        S/ {Number(resumen.totalVentasMes).toFixed(2)}
+                        S/ {Number(resumen.totalVentasMes || 0).toFixed(2)}
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@ const ResumenVentas = () => {
                         Total de Costos
                     </div>
                     <div style={{ fontSize: "24px", fontWeight: "700", color: "#f57c00" }}>
-                        S/ {Number(resumen.totalCostosMes).toFixed(2)}
+                        S/ {Number(resumen.totalCostosMes || 0).toFixed(2)}
                     </div>
                 </div>
 
