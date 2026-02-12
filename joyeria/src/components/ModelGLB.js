@@ -85,7 +85,7 @@ const ModelGLB = ({ url, name }) => {
                             child.material.needsUpdate = true;
                             // Aumentar brillo si es muy oscuro
                             if (child.material.color) {
-                                child.material.color.multiplyScalar(1.3);
+                                child.material.color.multiplyScalar(1.1);
                             }
                         }
                     }
