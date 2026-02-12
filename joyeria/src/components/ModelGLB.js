@@ -73,19 +73,10 @@ const ModelGLB = ({ url, name }) => {
         //         scene.add(dir);-----old
         //---------------------------------------------------------
         // Luz direccional principal (frontal)
-        const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        mainLight.position.set(5, 8, 5);
-        scene.add(mainLight);
+        //const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        //mainLight.position.set(5, 8, 5);
+        //scene.add(mainLight);
 
-// Luz de relleno (lateral izquierda)
-        const fillLight = new THREE.DirectionalLight(0xffffff, 1.0);
-        fillLight.position.set(-5, 3, 3);
-        scene.add(fillLight);
-
-// Luz trasera para eliminar sombras
-        const backLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        backLight.position.set(0, 3, -5);
-        scene.add(backLight);
 
         //----------------------------------------------------------
         // Cargar GLB
